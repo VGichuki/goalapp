@@ -6,6 +6,9 @@ class Config:
     '''
     pass
     SECRET_KEY = os.environ.get('SECRET_KEY')
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://wangari:nyeri12032@localhost/goalapp'
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
+
 
 
 
