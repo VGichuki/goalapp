@@ -17,3 +17,4 @@ class UploadPitch(FlaskForm):
 class CommentsForm(FlaskForm):
     comment=TextAreaField('Type comment:', validators=[DataRequired()])
     submit=SubmitField('Post Comment')
+
