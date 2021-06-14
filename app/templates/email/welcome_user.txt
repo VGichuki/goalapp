@@ -1,0 +1,3 @@
+Hello {{user.username}}
+Welcome to 60seconds of truth
+We have just seen you have signed up for our application and want to welcome you to the family. If you encounter any problem do not hesitate to contact us.
