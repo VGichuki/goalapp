@@ -7,11 +7,12 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/">60seconds of truth</a>
+        
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
                 <li><a href="/">Home</a></li>
+                <li><a href="{{url_for('main.new_pitch',name=current_user.username)}}">Upload Pitch</a></li>
         </div>
         <ul class="nav navbar-nav navbar-right">
             {% if current_user.is_authenticated %}
@@ -21,6 +22,7 @@
             <li><a href="{{url_for('auth.login')}}">Sign in</a></li>
             {%endif%}
         </ul>
+
 
     </div>
 </div>
