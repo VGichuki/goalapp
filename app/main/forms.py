@@ -11,7 +11,7 @@ class UploadPitch(FlaskForm):
     title = StringField('Tiltle')
     # bio = TextAreaField('Tell us about yourself.',validators = [Required()])
     submit = SubmitField('Submit')
-    category=SelectField('Select Category',validators=[DataRequired()],choices=[('Advertisement','Advertisement'),('Interview','Interview'),('Products','Products'),('IT','IT'),('Political','Political'),('Pickup Lines','Pickup Lines')])
+    category=SelectField('Select Category',validators=[DataRequired()],choices=[('Advertisement','Advertisement'),('Inspirational','Inspirational'),('Interview','Interview'),('Product','Product'),('IT','IT'),('Political','Political'),('Pickup Lines','Pickup Lines')])
     pitch=TextAreaField('Write Pitch:',validators=[DataRequired()])
     submit=SubmitField('Post Pitch')
 

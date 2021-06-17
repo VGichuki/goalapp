@@ -62,6 +62,8 @@ def update_pic(uname):
         db.session.commit()
     return redirect(url_for('main.profile',uname=uname))
 
+    return render_template('new_pitch.html', form=form)
+
 @main.route('/user/<name>/create_new', methods = ['POST','GET'])
 @login_required
 def new_pitch(name):
@@ -78,6 +80,22 @@ def new_pitch(name):
         new_pitch_object.save_p()
         return redirect(url_for('.index', form = form))
     return render_template('new_pitch.html', form = form)
+
+@main.route("/comment/<int:pitch_id>",methods=["POST","GET"])
+@login_required
+def comment_pitch(pitch_id):
+    form = CommentsForm()
+    pitch = Pitch.query.get(pitch_id)
+    all_comments = Comment.query.filter_by(pitch_id=pitch_id).all()
+    if form.validate_on_submit():
+        new_comment = form.comment.data
+        pitch_id = pitch_id
+        user_id = current_user._get_current_object().id
+        comment_object = Comment(comment=new_comment,user_id=user_id,pitch_id=pitch_id)
+        comment_object.save_c()
+        return redirect(url_for(".comment_pitch",pitch_id=pitch_id))
+    return render_template("comments.html",comment_form=form,pitch=pitch,all_comments=all_comments)
+        
 
 
 
