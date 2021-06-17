@@ -35,7 +35,9 @@
       <input type="submit">
     </form>
     {% endif %}
-    <h2>{{user.username}}:</h2>
-    {{ pitches }}
+    <div>
+      {{macro.displayPersonalPitches(pitches)}}
+    </div>
+    
 </div>
 {% endblock %}

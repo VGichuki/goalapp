@@ -1,4 +1,13 @@
 {% extends 'base.html'%}
-{% block content %}
- {{ pitches }}
+{%import 'macros.html' as macro %}
+
+
+{% block content%}
+<h1 class="text-center">CATEGORIES</h1>
+<div>
+    {{macro.displayPitches(pitches)}}
+</div>
+
+
+<footer class="text-center"> 2021 Vivian Gichuki</footer>
 {% endblock %}
